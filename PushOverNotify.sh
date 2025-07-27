@@ -20,8 +20,11 @@ else
 	POmsg="$1"
 fi
 
+printf -- "Status: "
 curl -s \
   --form-string "user=${POuser}" \
-  --form-string "token=${POtoken}" \
+  --form-string "token=${POtokn}" \
   --form-string "message=${POmsg}" \
   "${POurl}"
+
+printf -- "\tReturn: ${?}\n"
